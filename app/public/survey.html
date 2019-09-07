@@ -7,7 +7,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0-11/css/all.min.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <title>Friend Finder</title>
 </head>
 
@@ -224,8 +224,8 @@
                         $("#q10").val()
                     ]
                 };
-
-                $.post("/api/friends", userData, function(data) {
+                var URL = window.location.origin;
+                $.post(URL + "/api/friends", userData, function(data) {
                     $("#best-name").text(data.name);
                     $("#best-img").attr("src", data.photo);
                     $("#exampleModal").modal("toggle");
